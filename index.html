@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adelk. - DESIGN NO. 45 // 2025</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        .clickable-info {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            pointer-events: auto;
+            /* Re-enable pointer events since parent info-container has pointer-events: none */
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .clickable-info:hover {
+            opacity: 0.7;
+            transform: translateX(10px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="loader-mask"></div>
+    <header class="header">
+        <div class="header-left">
+            <a href="index.html" class="logo" style="text-decoration:none; color:inherit;">Adelk.</a>
+            <nav class="nav-links">
+                <a href="about.html">About</a>
+                <a href="projects.html">Projects</a>
+            </nav>
+        </div>
+        <div class="header-right">DESIGN NO. 45 // 2026</div>
+    </header>
+
+    <main class="page-container">
+        <!-- Giant Typography Background Overlay -->
+
+        <!-- Blueprint Lines & Texts on the left -->
+        <div class="info-container">
+            <div class="blueprint-line line-1"></div>
+            <div class="blueprint-line line-2"></div>
+
+            <div class="info-block pos-1">
+                <a href="projects.html" class="clickable-info">
+                    <h2>PROJECTS<br><span>& EXPERIMENTS</span></h2>
+                    <p style="margin-top: 5px;">SELECTED PORTFOLIO WORKS</p>
+                </a>
+            </div>
+
+            <div class="info-block pos-2">
+                <a href="about.html" class="clickable-info">
+                    <h2>ABOUT<br><span>THE MAKER</span></h2>
+                    <p style="margin-top: 5px;">DIGITAL FABRICATION & CERAMICS</p>
+                </a>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

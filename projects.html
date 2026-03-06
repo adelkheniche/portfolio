@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Adelk.</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="light-theme">
+    <div class="loader-mask"></div>
+    <header class="header">
+        <div class="header-left">
+            <a href="index.html" class="logo">Adelk.</a>
+            <nav class="nav-links">
+                <a href="about.html">About</a>
+                <a href="projects.html" class="active">Projects</a>
+            </nav>
+        </div>
+        <div class="header-right">DESIGN NO. 45 // 2026</div>
+    </header>
+
+    <main class="page-container projects-page">
+        <div class="projects-horizontal-layout">
+
+            <!-- Left Side: Slider Track -->
+            <div class="slider-viewport">
+                <div class="slider-track" id="sliderTrack">
+                    <!-- Slide 1 -->
+                    <div class="slide" data-index="0">
+                        <div class="slide-image-container">
+                            <img src="assets/main_bg.webp" alt="Project 1">
+                            <div class="slide-overlay">
+                                <h2>CONCEPT<br>POSTER SERIES</h2>
+                                <div class="slide-stats">
+                                    <span>👁 1823</span>
+                                    <span>❤️ 1350</span>
+                                </div>
+                            </div>
+                            <div class="slide-index-bg">01</div>
+                        </div>
+                        <div class="slide-footer">
+                            <p class="slide-excerpt">Exploring 3D volumes transposed onto 2D prints. This project
+                                focuses on the intersection of physical and digital spaces, capturing the fluid essence
+                                of organic shapes as they merge with strict geometric typography. By examining light,
+                                shadow, and materiality within virtual environments, the series creates a tangible sense
+                                of depth on a flat medium.</p>
+                            <a href="#" class="more-link">MORE ABOUT IT</a>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div class="slide" data-index="1">
+                        <div class="slide-image-container">
+                            <img src="assets/workshop_bg.webp" alt="Project 2">
+                            <div class="slide-overlay">
+                                <h2>WORKSHOP<br>ARCHIVES</h2>
+                                <div class="slide-stats">
+                                    <span>👁 1400</span>
+                                    <span>❤️ 950</span>
+                                </div>
+                            </div>
+                            <div class="slide-index-bg">02</div>
+                        </div>
+                        <div class="slide-footer">
+                            <p class="slide-excerpt">A collection of experimental objects and physical computing
+                                prototypes created during the 2025 maker residency. Combining digital fabrication
+                                methods like CNC milling and 3D printing with traditional woodworking techniques, these
+                                artifacts bridge the gap between ancient craftsmanship and the interactive potential of
+                                modern technology.</p>
+                            <a href="#" class="more-link">MORE ABOUT IT</a>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3 -->
+                    <div class="slide" data-index="2">
+                        <div class="slide-image-container">
+                            <img src="assets/subject_fg.webp" style="background:#e0e0e0;" alt="Project 3">
+                            <div class="slide-overlay">
+                                <h2>EVERYWHERE<br>AT HOME</h2>
+                                <div class="slide-stats">
+                                    <span>👁 2100</span>
+                                    <span>❤️ 1800</span>
+                                </div>
+                            </div>
+                            <div class="slide-index-bg">03</div>
+                        </div>
+                        <div class="slide-footer">
+                            <p class="slide-excerpt">Mental noise is hurting our minds — we are continually asking
+                                questions that create busyness, not knowledge. We are in 'reacting mode,' leaving no
+                                room for reflection. To regain perspective in life, you need to pause. This
+                                psychological art installation prompts the viewer to embrace stillness and reconnect
+                                with their inner clarity, visualizing silence as a protective layer against external
+                                chaos.</p>
+                            <a href="#" class="more-link">MORE ABOUT IT</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side: Sidebar -->
+            <div class="slider-sidebar">
+                <div class="sidebar-header">
+                    <div class="sidebar-line"></div>
+                    <div class="sidebar-num" id="activeNum">03</div>
+                    <div class="sidebar-title" id="activeTitle">Keep your soul<br>neat and tidy.</div>
+                </div>
+
+                <p class="sidebar-desc" id="activeDesc">Looking for inspiration for your soul project? Search for images
+                    based on colors, image formats, etc. Our brain is continually exposed to internal and external
+                    stimuli. Silence feels impossible, like emptying our spirit.</p>
+
+                <div class="sidebar-nav">
+                    <div class="nav-numbers" id="navNumbers">
+                        <!-- Populated by JS -->
+                        <span class="nav-num">02</span>
+                        <span class="nav-num">01</span>
+                    </div>
+
+                    <div class="nav-buttons">
+                        <button id="prevBtn" class="nav-btn">NEXT<br><span>«</span></button>
+                        <button id="nextBtn" class="nav-btn">PREV<br><span>»</span></button>
+                    </div>
+                </div>
+
+                <div class="scroll-indicator">
+                    <span>SCROLL</span>
+                    <div class="scroll-line"></div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Scrollable Project Deep Dive (Appears below carousel) -->
+        <div class="project-details-scroll" id="projectDetails">
+            <div class="details-contentainer" id="detailsContainer">
+                <!-- Content will be injected here dynamically based on the active slide -->
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Adelk.</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="light-theme">
+    <div class="loader-mask"></div>
+    <header class="header">
+        <div class="header-left">
+            <a href="index.html" class="logo">Adelk.</a>
+            <nav class="nav-links">
+                <a href="about.html" class="active">About</a>
+                <a href="projects.html">Projects</a>
+            </nav>
+        </div>
+        <div class="header-right">DESIGN NO. 45 // 2026</div>
+    </header>
+
+    <main class="page-container page-content light-theme">
+        <div class="project-details-scroll about-scroll" style="display: flex; align-items: center; min-height: 80vh;">
+
+            <div class="detail-block in-view" style="margin-bottom: 0;">
+                <div class="detail-text">
+                    <h3 class="detail-title" style="margin-bottom: 40px; font-size: 3.5rem;">À propos</h3>
+                    <p class="detail-paragraph" style="margin-bottom: 25px;">Je conçois et fabrique des objets et
+                        prototypes entre fabrication numérique, céramique et électronique. J’avance par itérations
+                        rapides : tester, corriger, stabiliser, puis documenter.</p>
+                    <p class="detail-paragraph" style="margin-bottom: 40px;">Ce portfolio regroupe des projets finis et
+                        des essais en cours : pièces
+                        fonctionnelles, objets plus narratifs, et explorations de matière.</p>
+
+                    <h4 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 15px; color: #111;">Contact</h4>
+                    <p class="detail-paragraph" style="margin-bottom: 25px;">Let's collaborate. Reach out for project
+                        inquiries, artistic direction, or just to say hello.</p>
+                    <a href="mailto:hello@adelk.com"
+                        style="color: #111; font-weight: 700; border-bottom: 2px solid #111; padding-bottom: 2px; text-decoration: none; font-size: 1.15rem;">hello@adelk.com</a>
+                </div>
+                <div class="detail-image no-shadow">
+                    <img src="assets/subject_fg.webp" alt="Profile">
+                </div>
+            </div>
+
+
+
+        </div>
+    </main>
+
+    <!-- Connect the same JS animation logic used on projects page -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const blocks = document.querySelectorAll('.detail-block');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('in-view');
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            blocks.forEach(block => observer.observe(block));
+        });
+    </script>
+</body>
+
+</html>
