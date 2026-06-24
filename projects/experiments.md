@@ -10,7 +10,7 @@ excerpt: Essais et recherches autour de la sérigraphie Riso, de la découpe las
 
 ## Snapshot
 
-- **Rôle :** Maker
+- **Rôle :** Designer
 - **Timeframe :** 2026
 - **Contexte :** Laboratoire d'expérimentation céramique et machines numériques
 - **Techniques :** Duplicateur Riso, Découpe laser, Impression 3D argile

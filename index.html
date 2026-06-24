@@ -34,6 +34,7 @@
             <a href="index.html" class="logo" style="text-decoration:none; color:inherit;">Adelk.</a>
             <nav class="nav-links">
                 <a href="about.html">About</a>
+                <a href="ai.html" class="ai-hover-trigger">AI & CODE</a>
                 <a href="projects.html">Projects</a>
             </nav>
         </div>
@@ -47,6 +48,7 @@
         <div class="info-container">
             <div class="blueprint-line line-1"></div>
             <div class="blueprint-line line-2"></div>
+            <div class="blueprint-line line-3"></div>
 
             <div class="info-block pos-1">
                 <a href="projects.html" class="clickable-info">
@@ -56,13 +58,48 @@
             </div>
 
             <div class="info-block pos-2">
+                <a href="ai.html" class="clickable-info ai-hover-trigger">
+                    <h2>AI<br><span>& CODE</span></h2>
+                    <p style="margin-top: 5px;">GENERATIVE & WEB SYSTEMS</p>
+                </a>
+            </div>
+
+            <div class="info-block pos-3">
                 <a href="about.html" class="clickable-info">
-                    <h2>ABOUT<br><span>THE MAKER</span></h2>
+                    <h2>ABOUT<br><span>THE DESIGNER</span></h2>
                     <p style="margin-top: 5px;">DIGITAL FABRICATION & CERAMICS</p>
                 </a>
             </div>
         </div>
+        <div class="home-subject-container" id="homeSubject">
+            <img src="assets/subject_about.png" alt="About Me" class="home-subject-about">
+            <img src="assets/subject_projects.png" alt="My Projects" class="home-subject-projects">
+            <img src="assets/subject_ai.png" alt="AI & CODE" class="home-subject-ai">
+        </div>
     </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const aboutLinks = document.querySelectorAll('a[href="about.html"]');
+            const projectLinks = document.querySelectorAll('a[href="projects.html"]');
+
+            aboutLinks.forEach(link => {
+                link.addEventListener('mouseenter', () => document.body.classList.add('show-about-hover'));
+                link.addEventListener('mouseleave', () => document.body.classList.remove('show-about-hover'));
+            });
+
+            projectLinks.forEach(link => {
+                link.addEventListener('mouseenter', () => document.body.classList.add('show-project-hover'));
+                link.addEventListener('mouseleave', () => document.body.classList.remove('show-project-hover'));
+            });
+
+            const aiLinks = document.querySelectorAll('.ai-hover-trigger');
+            aiLinks.forEach(link => {
+                link.addEventListener('mouseenter', () => document.body.classList.add('show-ai-hover'));
+                link.addEventListener('mouseleave', () => document.body.classList.remove('show-ai-hover'));
+            });
+        });
+    </script>
 </body>
 
 </html>

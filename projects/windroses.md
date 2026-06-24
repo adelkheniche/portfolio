@@ -4,12 +4,12 @@ index: 01
 title: WINDROSES
 category: 2026 // IOT & POETIC COMPUTING
 hero_img: assets/windroses/windrose_hero.jpg
-excerpt: Objet de design cinétique pour la transmission de signaux à distance.
+excerpt: Transmettre une pensée à distance par le souffle. Une interaction poétique et éphémère, sans écran ni bouton.
 ---
 
 ## Snapshot
 
-- **Rôle :** Maker
+- **Rôle :** Designer
 - **Timeframe :** 2026
 - **Contexte :** Recherche sur l'interaction avec un objet connecté cinétique
 - **Techniques :** Impression 3D SLA, coulage porcelaine, CAO (Fusion 360), usinage PCB, soudure CMS, ESP32, MQTT
@@ -17,7 +17,7 @@ excerpt: Objet de design cinétique pour la transmission de signaux à distance.
 
 ## Contraintes
 
-L'enjeu consistait à transmettre un signal à distance par une interaction cinétique, sans écran. La contrainte principale était de dimensionner un volume interne suffisant pour abriter l'électronique tout en assurant la stabilité de la base en porcelaine face au souffle de l'utilisateur.
+Transmettre un signal à distance par le mouvement, sans écran. La contrainte était de loger l'électronique dans la porcelaine tout en stabilisant la base face au souffle, et d'associer des techniques artisanales et industrielles en prenant en compte les tolérances propres à chaque technologie.
 
 <video autoplay muted loop playsinline class="project-video">
   <source src="assets/windroses/windroses_video.mp4" type="video/mp4" />
@@ -25,22 +25,25 @@ L'enjeu consistait à transmettre un signal à distance par une interaction cin�
 
 ## Intention
 
-Souffler sur un moulinet active la rotation d'un second moulinet distant. Le corps cylindrique en porcelaine abrite la carte de contrôle et le moteur, tandis que les pales sont en placage bois cintré.
+Connecter les gens entre eux sans écran, sans LED ni bouton, par le souffle. Le geste engendre un mouvement éphémère à l'autre bout, comme une pensée silencieuse et invisible. Parfois, recevoir cette attention d'un être cher suffit à tout dire.
+
+Le corps cylindrique en porcelaine abrite la carte de contrôle et le moteur, tandis que les pales sont en placage bois cintré.
 
 ![Concept d'interaction](assets/windroses/windroses_concept.png)
 
 ## Démarche
 
-- **Générateur :** Un micro-moteur DC utilisé en génératrice remplace le capteur de vent, associé à un filtre passe-bas matériel et logiciel pour stabiliser le signal électrique induit par le souffle.
-- **Protocole :** Utilisation du protocole MQTT pour la communication réseau bidirectionnelle entre les modules ESP32.
+- **Détection :** Un micro-moteur DC utilisé en génératrice remplace le capteur de vent, filtré pour stabiliser le signal électrique du souffle.
+- **Réseau :** Communication bidirectionnelle en MQTT entre deux modules ESP32.
 
 ![Recherche bobinages moteur](assets/windroses/coils_prototypes.jpg)
 ![Moteur sur-mesure](assets/windroses/placeholder_custom_motor.jpg)
 
 ## Fabrication
 
-- **Céramique :** Modélisation CAO (Fusion 360) intégrant 15 % de retrait de la porcelaine au séchage et à la cuisson. Impression 3D résine (MSLA) du master, fabrication du moule en plâtre et coulage de la barbotine.
-- **Électronique :** Usinage de la carte de test sur CNC, fraisage de la carte finale sur machine LPKF, soudure des composants CMS et intégration de la carte dans le piètement.
+- **Céramique :** Coulage de barbotine de porcelaine dans un moule en plâtre tiré d'un master imprimé en résine 3D (SLA). Modélisation Fusion 360 intégrant 15 % de retrait de la terre.
+- **Électronique :** Usinage CNC du PCB de test, fraisage de la carte finale, soudure de composants CMS.
+- **Intégration :** Véritable « integration hell » consistant à loger la carte électronique dans un châssis imprimé en 3D, lui-même inséré dans la pièce en porcelaine. Cette dernière se déformant et rétrécissant de manière variable à la cuisson, il a fallu concevoir un berceau d'intégration tolérant pour compenser ces variations géométriques imprévisibles.
 
 ![Modélisation Fusion 360](assets/windroses/cad_fusion360.jpg)
 ![Impression SLA du master](assets/windroses/mold_sla_master.jpg)
@@ -55,12 +58,12 @@ Souffler sur un moulinet active la rotation d'un second moulinet distant. Le cor
 
 ## Résultat
 
-Le couplage du moteur DC et du filtre permet de détecter de manière fiable l'intensité et la durée du souffle. L'intégration de la carte dans la base valide les tolérances dimensionnelles de la porcelaine après cuisson.
+Le souffle est détecté de manière fiable. La carte s'intègre dans le piètement malgré le retrait géométrique de la porcelaine après cuisson.
 
 ![Windrose Final Result](assets/windroses/windrose_final.png)
 
 ## Reproductibilité
 
-Le processus (master SLA, moule plâtre, usinage PCB) et le formage des pales en bois par trempage et cintrage permettent d'obtenir la courbure et l'ajustement de manière fiable.
+La chaîne de fabrication (master SLA, moule plâtre, usinage PCB) est validée. Le formage des pales en bois par trempage et cintrage permet d'obtenir la courbure de manière répétable, mais demande un processus artisanal fastidieux et peu reproductible à grande échelle.
 
 ![Pales en placage bois après trempage](assets/windroses/pinwheel_wood_veneer.jpg)

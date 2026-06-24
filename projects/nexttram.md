@@ -9,40 +9,40 @@ excerpt: Afficheur domestique temps réel basé sur ESP32, traduisant les flux d
 
 ## Snapshot
 
-- **Rôle :** Maker
+- **Rôle :** Designer
 - **Timeframe :** 2026
-- **Contexte :** Projet de design matériel et logiciel autour de la donnée urbaine
+- **Contexte :** Recherche sur l'affichage physique d'informations
 - **Techniques :** Impression 3D FDM, C++ (ESP32), API RATP/IDFM, Interface TFT
 - **Statut :** Prototype fonctionnel
 
 ## Contraintes
 
-L'enjeu consistait à extraire les données de transport public des écrans de smartphones pour les afficher en continu dans le hall d'entrée d'un domicile. La contrainte était de concevoir un boîtier compact intégrant l'électronique de communication et un écran TFT lisible à distance.
+Afficher les horaires de transport sans écran de smartphone. L'enjeu était d'intégrer un ESP32 et un écran TFT dans un boîtier mural compact.
 
 ![NEXTTRAM Physical Design](assets/siel/nexttram_full.png)
 
 ## Intention
 
-Concevoir une balise physique domestique dont la géométrie torsadée oriente l'écran de signalisation à hauteur de regard, s'éloignant des boîtiers techniques classiques.
+Créer une balise domestique dont la forme torsadée oriente l'écran vers le regard.
 
 ## Démarche
 
-- **Charte graphique :** Utilisation des codes de la signalétique de transport parisienne (couleurs des lignes, indices de direction).
-- **Sélection des données :** Affichage des horaires de passage en temps réel et des alertes de perturbation.
-- **Format :** Modélisation d'un pied vertical pour limiter l'encombrement sur la console d'entrée.
+- **Affichage :** Utilisation des codes couleur des lignes de transport parisiennes.
+- **Données :** Affichage des horaires en temps réel et des alertes trafic.
+- **Format :** Boîtier vertical compact pour limiter l'encombrement.
 
 ## Fabrication
 
-- **Firmware :** Développement C++ (ESP32) gérant les requêtes HTTPS vers les API RATP/IDFM et les reconnexions réseau automatiques.
-- **Parsing :** Utilisation de la bibliothèque `ArduinoJson` pour traiter le flux de données en limitant l'empreinte mémoire RAM de l'ESP32.
-- **Impression 3D :** Modélisation et impression du pied torsadé (PLA vert métallique) avec une tolérance d'ajustement de 0.2 mm pour insérer l'écran TFT.
+- **Code :** Développement C++ (ESP32) gérant les requêtes HTTPS vers l'API d'Île-de-France Mobilités.
+- **JSON :** Utilisation de la bibliothèque `ArduinoJson` pour extraire les horaires.
+- **Boîtier :** Impression 3D (PLA vert) avec ajustement à 0,2 mm pour intégrer l'écran.
 
 ![NEXTTRAM Interface](assets/siel/nexttram_closeup.jpg)
 
 ## Résultat
 
-L'appareil affiche en continu les horaires de transport. L'écran TFT assure le contraste nécessaire. L'intégration d'un circuit de charge et d'une batterie LiPo est envisagée pour supprimer le cordon d'alimentation actuel.
+L'afficheur indique les horaires en temps réel. Ce projet constitue un exercice d'intégration d'une interface graphique portée sur un seul ESP32 avec une gestion optimisée de la mémoire interne.
 
 ## Reproductibilité
 
-Le code de connexion, de traitement JSON et d'affichage TFT est documenté pour être appliqué à d'autres flux de données.
+Le code de connexion et d'affichage est documenté pour être adapté à d'autres flux d'informations.

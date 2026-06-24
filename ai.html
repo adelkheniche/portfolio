@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI & CODE - Adelk.</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        .wip-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            width: 100vw;
+            padding: 0 5vw;
+            box-sizing: border-box;
+            font-family: 'Space Grotesk', sans-serif;
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .wip-tag {
+            font-size: 0.95rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: #777;
+            margin-bottom: 20px;
+            animation: fadeIn 1s ease-out 0.2s backwards;
+        }
+
+        .wip-title {
+            font-size: clamp(3rem, 10vw, 7rem);
+            font-weight: 800;
+            line-height: 0.9;
+            letter-spacing: -0.04em;
+            text-transform: uppercase;
+            color: #ffffff;
+            margin-bottom: 30px;
+            animation: fadeIn 1s ease-out 0.4s backwards;
+        }
+
+        .wip-excerpt {
+            font-size: clamp(1.1rem, 2vw, 1.4rem);
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.6);
+            max-width: 600px;
+            margin: 0 auto 50px auto;
+            animation: fadeIn 1s ease-out 0.6s backwards;
+        }
+
+        .wip-back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: #ffffff;
+            color: #000000;
+            padding: 16px 36px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.05);
+            animation: fadeIn 1s ease-out 0.8s backwards;
+        }
+
+        .wip-back-btn:hover {
+            background: rgba(255, 255, 255, 0.85);
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(255, 255, 255, 0.1);
+        }
+
+        .wip-back-btn svg {
+            transition: transform 0.3s ease;
+        }
+
+        .wip-back-btn:hover svg {
+            transform: translateX(-4px);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body class="light-theme projects-page-body">
+    <div class="loader-mask"></div>
+    <header class="header">
+        <div class="header-left">
+            <a href="index.html" class="logo">Adelk.</a>
+            <nav class="nav-links">
+                <a href="about.html">About</a>
+                <a href="ai.html" class="active">AI & CODE</a>
+                <a href="projects.html">Projects</a>
+            </nav>
+        </div>
+        <div class="header-right">DESIGN NO. 45 // 2026</div>
+    </header>
+
+    <main class="wip-container">
+        <!-- Yellow Caution Tape Banner -->
+        <div class="caution-tape" style="margin-bottom: 50px; max-width: 600px; width: 90%;">
+            <div class="caution-tape-content">
+                PAGE EN COURS DE CRÉATION
+            </div>
+        </div>
+
+        <span class="wip-tag">AI & Code // System</span>
+        <h1 class="wip-title">Work In<br>Progress</h1>
+        <p class="wip-excerpt">
+            De nouveaux projets génératifs, installations interactives et expériences de code créatif sont en cours de développement et de documentation.
+        </p>
+        <a href="index.html" class="wip-back-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="19" y1="12" x2="5" y2="12"></line>
+                <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+            Retour à l'accueil
+        </a>
+    </main>
+</body>
+
+</html>

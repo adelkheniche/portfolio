@@ -9,7 +9,7 @@ excerpt: Système de mesure IoT pour les FabLabs, inspiré de Birdie. Signaléti
 
 ## Snapshot
 
-- **Rôle :** Maker
+- **Rôle :** Designer / Contrefacteur
 - **Timeframe :** 2026
 - **Contexte :** Recherche appliquée sur la santé dans les Fablabs
 - **Techniques :** Capteur HM330X (PM2.5 & PM10), ESP32-S3, Servomoteur, Supabase, Dataviz Web
@@ -17,7 +17,7 @@ excerpt: Système de mesure IoT pour les FabLabs, inspiré de Birdie. Signaléti
 
 ## Contraintes
 
-Dans un atelier de céramique ou un fablab, de nombreuses manipulations génèrent des particules fines imperceptibles (ponçage de la terre cuite, préparation de barbotine dégageant de la silice, cuisson). Le principal enjeu réside dans l'invisibilité du danger : sans signal concret, les usagers n'activent pas l'aspiration et n'ouvrent pas les fenêtres. La contrainte consistait à concevoir une alerte physique non intrusive, capable de modifier les comportements sans passer par un écran.
+Dans un atelier de céramique ou un fablab, les manipulations (ponçage de la terre, préparation de barbotine, cuisson) génèrent des particules fines. Sans signal visuel, les usagers n'activent pas l'aspiration ou n'aèrent pas les pièces. La contrainte consistait à concevoir un indicateur physique pour modifier les comportements sans écran.
 
 <video autoplay muted loop playsinline class="project-video">
   <source src="assets/birdie.mp4" type="video/mp4" />
@@ -25,24 +25,24 @@ Dans un atelier de céramique ou un fablab, de nombreuses manipulations génère
 
 ## Intention
 
-Transformer la donnée de pollution en un état mécanique. Inspiré du projet original *Birdie* (canari basculant en cas d'air vicié), ce prototype utilise un oiseau en impression 3D qui bascule tête en bas lorsque le seuil critique de PM2.5 est dépassé. La particularité du projet est d'envoyer ces mesures en continu vers une base de données cloud pour les analyser via un site web dédié.
+Traduire la qualité de l'air en un état mécanique. Inspiré du projet *Birdie* (canari basculant en cas d'air vicié), cet oiseau imprimé en 3D bascule tête en bas lorsque le seuil de PM2.5 est dépassé. Les mesures sont envoyées en continu vers une base de données pour analyse sur un tableau de bord en ligne.
 
 ![Birdie dans l'atelier](assets/birdie/birdie_workshop_sink.jpg)
 ![Birdie et étagères](assets/birdie/birdie_workshop_shelves.jpg)
 
 ## Démarche
 
-- **Actionneur :** Utilisation d'un servomoteur en liaison directe pour le pivot de l'oiseau. Ce choix simplifie le prototype et valide l'usage avant d'optimiser la mécanique.
-- **Croisement des données :** Les relevés de qualité de l'air enregistrés sur Supabase sont croisés avec l'agenda de réservation des machines de l'atelier pour analyser l'impact de chaque activité.
+- **Actionneur :** Un servomoteur gère directement le pivotement de l'oiseau pour valider le principe mécanique.
+- **Croisement des données :** Relevés sur Supabase croisés avec le planning de l'atelier pour analyser l'impact de chaque activité.
 
 ![Gros plan sur Birdie](assets/birdie/birdie_closeup.jpg)
 ![Prototype V1 sur support bois](assets/birdie/birdie_prototype_wood.jpg)
 
 ## Fabrication
 
-- **Acquisition :** Raccordement d'un capteur HM330X à un microcontrôleur ESP32-S3.
-- **Stabilisation électrique :** Le démarrage du servomoteur provoquait des chutes de tension réinitialisant l'ESP32. Ce problème a été résolu de manière logicielle en limitant la vitesse d'accélération du signal PWM.
-- **Architecture Data :** Transmission des données de mesure à la base de données Supabase par requêtes HTTP (Wi-Fi) pour l'archivage en temps réel.
+- **Acquisition :** Raccordement d'un capteur HM330X à un ESP32-S3.
+- **Régulation :** Limitation logicielle de l'accélération du servomoteur pour éviter les chutes de tension et réinitialisations de l'ESP32.
+- **Transmission :** Envoi des données vers la base Supabase en Wi-Fi.
 
 ![Soudure de l'ESP32 Feather](assets/birdie/birdie_soldering.jpg)
 ![Électronique interne et batterie](assets/birdie/birdie_internal.jpg)
@@ -52,15 +52,15 @@ Transformer la donnée de pollution en un état mécanique. Inspiré du projet o
 
 ## Résultat
 
-- **Physique :** L'alerte mécanique de l'oiseau attire l'attention et incite les usagers à aérer la pièce.
-- **Numérique :** Le croisement des graphiques de pollution et du planning de réservation a identifié un dysfonctionnement de l'aspiration de la découpeuse laser, qui rejetaient l'air dans une salle adjacente. Ces données ont permis de faire lancer des travaux de correction.
+- **Physique :** L'alerte mécanique incite les usagers à aérer.
+- **Analyse :** Les données ont révélé un défaut d'aspiration sur la découpeuse laser (rejet d'air dans la pièce voisine), ce qui a permis de faire corriger l'installation.
 
 ![Interface du tableau de bord d'analyse de l'air](assets/birdie/birdie_dashboard.png)
 
-Ce tableau de bord croise les mesures de concentration de particules (PM2.5 et PM10) avec l'agenda des réservations de machines et d'activités du laboratoire. Cette corrélation permet de comparer précisément la qualité de l'air générée par chaque type d'activité (comme une initiation à la découpe laser ou le ponçage de pièces en céramique) afin de valider et d'anticiper les risques sanitaires spécifiques à chaque usage de la salle. Le tableau de bord est accessible en ligne : [adelkheniche.github.io/airquality](https://adelkheniche.github.io/airquality).
+Le tableau de bord croise les taux de particules (PM2.5/PM10) et le planning des machines pour identifier la pollution liée à chaque activité (laser, ponçage). Accessible en ligne : [adelkheniche.github.io/airquality](https://adelkheniche.github.io/airquality).
 
 ## Reproductibilité
 
 Le fonctionnement général (moteur DC, filtrage du signal, transmission Wi-Fi) est validé. Pistes d'amélioration (V2) :
 - Conception d'un PCB dédié regroupant le microcontrôleur, le driver moteur et le capteur de qualité de l'air.
-- Intégration d'un circuit de charge (BMS) et d'une batterie LiPo pour rendre le projet autonome et sans fil, en optimisant l'autonomie via une veille prolongée avec une prise de mesure toutes les 15 minutes.
+- Intégration d'un circuit de charge (BMS) et d'une batterie LiPo pour rendre le projet autonome et sans fil.

@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PortfolioSkillOutput",
+  "type": "object",
+  "required": [
+    "mode",
+    "audience",
+    "positioning",
+    "assumptions",
+    "missing_inputs",
+    "deliverable_summary",
+    "next_actions"
+  ],
+  "properties": {
+    "mode": {
+      "type": "string",
+      "enum": [
+        "portfolio_architecture",
+        "project_case_study",
+        "portfolio_audit",
+        "photography_guidance"
+      ]
+    },
+    "audience": {
+      "type": "string"
+    },
+    "positioning": {
+      "type": "string"
+    },
+    "assumptions": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "missing_inputs": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "deliverable_summary": {
+      "type": "string"
+    },
+    "next_actions": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  }
+}

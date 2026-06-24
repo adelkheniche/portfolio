@@ -12,13 +12,14 @@
         rel="stylesheet">
 </head>
 
-<body class="light-theme">
+<body class="light-theme projects-page-body">
     <div class="loader-mask"></div>
     <header class="header">
         <div class="header-left">
             <a href="index.html" class="logo">Adelk.</a>
             <nav class="nav-links">
                 <a href="about.html">About</a>
+                <a href="ai.html">AI & CODE</a>
                 <a href="projects.html" class="active">Projects</a>
             </nav>
         </div>
@@ -26,123 +27,73 @@
     </header>
 
     <main class="page-container projects-page">
-        <div class="projects-horizontal-layout">
+        <!-- New Hero Showcase Layout -->
+        <div class="hero-showcase" id="heroShowcase">
 
-            <!-- Left Side: Slider Track -->
-            <div class="slider-viewport">
-                <div class="slider-track" id="sliderTrack">
-                    <!-- Slide 1 -->
-                    <div class="slide" data-index="0">
-                        <div class="slide-image-container">
-                            <img src="assets/main_bg.webp" alt="Project 1">
-                            <div class="slide-overlay">
-                                <h2>CONCEPT<br>POSTER SERIES</h2>
-                                <div class="slide-stats">
-                                    <span>👁 1823</span>
-                                    <span>❤️ 1350</span>
-                                </div>
-                            </div>
-                            <div class="slide-index-bg">01</div>
-                        </div>
-                        <div class="slide-footer">
-                            <p class="slide-excerpt">Exploring 3D volumes transposed onto 2D prints. This project
-                                focuses on the intersection of physical and digital spaces, capturing the fluid essence
-                                of organic shapes as they merge with strict geometric typography. By examining light,
-                                shadow, and materiality within virtual environments, the series creates a tangible sense
-                                of depth on a flat medium.</p>
-                            <a href="#" class="more-link">MORE ABOUT IT</a>
-                        </div>
-                    </div>
+            <!-- Left: Project Info -->
+            <div class="hero-left">
+                <div class="project-index-large" id="heroIndex">01</div>
+                <h1 class="project-title-large" id="heroTitle">WINDROSES</h1>
+                <p class="project-excerpt-large" id="heroExcerpt">Transmettre une pensée à distance par le souffle. Une interaction poétique et éphémère, sans écran ni bouton.</p>
+                <div class="hero-socials">
+                    <a href="https://www.linkedin.com/in/adelkheniche/" target="_blank" rel="noopener">LinkedIn</a>
+                </div>
+                <button class="hero-read-more" id="readMoreHero">DISCOVER PROJECT</button>
+            </div>
 
-                    <!-- Slide 2 -->
-                    <div class="slide" data-index="1">
-                        <div class="slide-image-container">
-                            <img src="assets/workshop_bg.webp" alt="Project 2">
-                            <div class="slide-overlay">
-                                <h2>WORKSHOP<br>ARCHIVES</h2>
-                                <div class="slide-stats">
-                                    <span>👁 1400</span>
-                                    <span>❤️ 950</span>
-                                </div>
-                            </div>
-                            <div class="slide-index-bg">02</div>
-                        </div>
-                        <div class="slide-footer">
-                            <p class="slide-excerpt">A collection of experimental objects and physical computing
-                                prototypes created during the 2025 maker residency. Combining digital fabrication
-                                methods like CNC milling and 3D printing with traditional woodworking techniques, these
-                                artifacts bridge the gap between ancient craftsmanship and the interactive potential of
-                                modern technology.</p>
-                            <a href="#" class="more-link">MORE ABOUT IT</a>
-                        </div>
-                    </div>
-
-                    <!-- Slide 3 -->
-                    <div class="slide" data-index="2">
-                        <div class="slide-image-container">
-                            <img src="assets/subject_fg.webp" style="background:#e0e0e0;" alt="Project 3">
-                            <div class="slide-overlay">
-                                <h2>EVERYWHERE<br>AT HOME</h2>
-                                <div class="slide-stats">
-                                    <span>👁 2100</span>
-                                    <span>❤️ 1800</span>
-                                </div>
-                            </div>
-                            <div class="slide-index-bg">03</div>
-                        </div>
-                        <div class="slide-footer">
-                            <p class="slide-excerpt">Mental noise is hurting our minds — we are continually asking
-                                questions that create busyness, not knowledge. We are in 'reacting mode,' leaving no
-                                room for reflection. To regain perspective in life, you need to pause. This
-                                psychological art installation prompts the viewer to embrace stillness and reconnect
-                                with their inner clarity, visualizing silence as a protective layer against external
-                                chaos.</p>
-                            <a href="#" class="more-link">MORE ABOUT IT</a>
-                        </div>
-                    </div>
+            <!-- Center: Main Image -->
+            <div class="hero-center">
+                <div class="main-image-wrapper">
+                    <img src="assets/windroses/windrose_hero.jpg" alt="Windroses" id="heroMainImg" />
                 </div>
             </div>
 
-            <!-- Right Side: Sidebar -->
-            <div class="slider-sidebar">
-                <div class="sidebar-header">
-                    <div class="sidebar-line"></div>
-                    <div class="sidebar-num" id="activeNum">03</div>
-                    <div class="sidebar-title" id="activeTitle">Keep your soul<br>neat and tidy.</div>
+            <!-- Hidden Data for JS -->
+            <div id="projectData" style="display:none;">
+                <div class="project-item" data-id="windroses" data-index="01" data-title="WINDROSES"
+                    data-img="assets/windroses/windrose_hero.jpg"
+                    data-excerpt="Transmettre une pensée à distance par le souffle. Une interaction poétique et éphémère, sans écran ni bouton.">
                 </div>
-
-                <p class="sidebar-desc" id="activeDesc">Looking for inspiration for your soul project? Search for images
-                    based on colors, image formats, etc. Our brain is continually exposed to internal and external
-                    stimuli. Silence feels impossible, like emptying our spirit.</p>
-
-                <div class="sidebar-nav">
-                    <div class="nav-numbers" id="navNumbers">
-                        <!-- Populated by JS -->
-                        <span class="nav-num">02</span>
-                        <span class="nav-num">01</span>
-                    </div>
-
-                    <div class="nav-buttons">
-                        <button id="prevBtn" class="nav-btn">NEXT<br><span>«</span></button>
-                        <button id="nextBtn" class="nav-btn">PREV<br><span>»</span></button>
-                    </div>
+                <div class="project-item" data-id="nexttram" data-index="02" data-title="NEXTTRAM"
+                    data-img="assets/siel/nexttram_full.png"
+                    data-excerpt="Afficheur domestique temps réel basé sur ESP32, traduisant les flux de transport en un signal physique.">
                 </div>
-
-                <div class="scroll-indicator">
-                    <span>SCROLL</span>
-                    <div class="scroll-line"></div>
+                <div class="project-item" data-id="birdie" data-index="03" data-title="BIRDIE<br />& AIR QUALITY"
+                    data-img="assets/birdie/birdie_hero.jpg"
+                    data-excerpt="Système de mesure IoT pour les FabLabs, inspiré de Birdie. Signalétique physique pour la qualité de l'air.">
+                </div>
+                <div class="project-item" data-id="ceramics" data-index="04" data-title="IMPRESSION 3D<br />CÉRAMIQUE"
+                    data-img="assets/windroses/delta-wasp-2040-clay-imprimante-3d-a-base-d-argile.jpg"
+                    data-excerpt="Recherche sur l'impression 3D d'argile et validation par la fabrication d'une lampe fonctionnelle.">
+                </div>
+                <div class="project-item" data-id="experiments" data-index="05" data-title="EXPERIMENTATIONS"
+                    data-img="assets/windroses/lamp_ceramic_light.jpg"
+                    data-excerpt="Essais et recherches autour de la sérigraphie Riso, de la découpe laser et de l'impression 3D céramique.">
                 </div>
             </div>
 
+            <!-- Pagination Dots & Arrow Controls -->
+            <div class="hero-dots-wrapper">
+                <button class="hero-arrow prev-arrow" id="prevShowcaseBtn" aria-label="Projet précédent">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                </button>
+                <div class="hero-dots" id="heroDots">
+                    <!-- Dots will be injected by JS -->
+                </div>
+                <button class="hero-arrow next-arrow" id="nextShowcaseBtn" aria-label="Projet suivant">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
+            </div>
         </div>
 
         <!-- Scrollable Project Deep Dive (Appears below carousel) -->
         <div class="project-details-scroll" id="projectDetails">
-            <div class="details-contentainer" id="detailsContainer">
+            <div class="details-container" id="detailsContainer">
                 <!-- Content will be injected here dynamically based on the active slide -->
             </div>
         </div>
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="script.js"></script>
 </body>
 
