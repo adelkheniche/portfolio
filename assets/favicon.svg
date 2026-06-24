@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <style>
+    text {
+      fill: #111111;
+      font-family: 'Space Grotesk', -apple-system, sans-serif;
+      font-weight: 800;
+      font-size: 20px;
+      letter-spacing: -0.05em;
+    }
+    @media (prefers-color-scheme: dark) {
+      text {
+        fill: #ffffff;
+      }
+    }
+  </style>
+  <text x="50%" y="58%" dominant-baseline="central" text-anchor="middle">AK</text>
+</svg>
